@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Service Onboarding</title>
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+    <header>
+        <h1 id="header-text"></h1>
+    </header>
+<div id="onboarding-container">
+    <div class="step active-step" id="step1">
+        <p>Please enter your name and email.</p>
+        <label for="user-name">Name:</label>
+        <input type="text" id="user-name" placeholder="Enter your name">
+        <label for="user-email">Email:</label>
+        <input type="email" id="user-email" placeholder="Enter your email">
+       
+        
+        <button onclick="nextStep()">Continue</button>
+    </div>
+    <div class="step" id="step2">
+        <h2>Favorite Types of Exercise (Select All That Apply):</h2>
+        <div id="exercise-frequency">
+        <label>
+            <input type="checkbox" name="exercise" value="Cardio"> Cardio
+          </label>
+          
+          <label>
+            <input type="checkbox" name="exercise" value="Strength Training"> Strength Training
+          </label>
+          
+          <label>
+            <input type="checkbox" name="exercise" value="Yoga"> Yoga
+          </label>
+          
+          <label>
+            <input type="checkbox" name="exercise" value="HIIT"> HIIT
+          </label>
+          </div>
+        <button onclick="nextStep()">Next</button>
+    </div>
+    <div class="step" id="step3">
+        <h2>Weight Goals</h2>
+        <p>What are your weight goals?</p>
+        <input type="text" id="weight-goals" placeholder="Enter your weight goals">
+        <button onclick="submitForm()">Submit</button>
+    </div>
+</div>
+<div id="confirmation-message" class="message" style="display: none;"></div>
+<script src="script.js"></script>
+
+</body>
+</html>
