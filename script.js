@@ -80,7 +80,11 @@ function submitForm() {
 
     const weightGoal = document.querySelector('input[name="weightGoal"]:checked');
     userData['weightGoal'] = weightGoal ? weightGoal.value : '';
-
+   
+    document.getElementById('user-age').value = '';
+    document.getElementById('user-weight').value = '';
+    document.getElementById('user-Height').value = '';
+    
     const jsonData = JSON.stringify(userData);
     const blob = new Blob([jsonData], { type: 'application/json' });
     const link = document.createElement('a');
