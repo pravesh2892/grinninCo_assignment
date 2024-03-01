@@ -3,25 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Service Onboarding</title>
+    <title>Innovative Fitness</title>
     <link rel="stylesheet" href="style.css" >
 </head>
 <body>
     <header>
+        <img class="logo" src="https://www.innovativefitness.com/wp-content/uploads/IF_Logo_White_2018.png"
+        alt="logo" />
         <h1 id="header-text"></h1>
     </header>
-<div id="onboarding-container">
+
+    <div id="welcome-container" class="welcom">
+        <h2>Welcome to Innovative Fitness! We're thrilled to be part of your fitness journey. Let's start by understanding your goals</h1>
+        <div class="img-gif">
+            <img src="https://static.spacecrafted.com/fc7241510ec245c5b42e95561258cdcc/i/e9a55f44e5f64c8489744bb51ee7dbc0/1/4SoifmQp45JMgBnHp7ed2/Low-Impact-Workout-high-low-reach.gif" alt="gym" />
+           <img src="https://static.spacecrafted.com/fc7241510ec245c5b42e95561258cdcc/i/cba94e03b0054bf2a115f17b485ecfad/1/GCuCv726gZycFxatRCb7iU/Low-Impact-Workout-fast-feet.gif" alt="gym" />
+           <img src="https://static.spacecrafted.com/fc7241510ec245c5b42e95561258cdcc/i/a323c173feec47eaa9a66ab088ca63b4/1/GCuCv726gZycFxatRCb7iU/5.gif" alt="gif" />
+          
+        </div>
+        <button onclick="startOnboarding()">Let's Start</button>
+    </div>
+<div id="onboarding-container" style="display: none">
     <div class="step active-step" id="step1">
-        <p>Please enter your name and email.</p>
+        <p class="center-text">Step 1</p>
         <label for="user-name">Name:</label>
         <input type="text" id="user-name" placeholder="Enter your name">
         <label for="user-email">Email:</label>
         <input type="email" id="user-email" placeholder="Enter your email">
-       
+        <h2>Fitness Goal (Choose One):</h2>
+        <div id="fitnessGoal" >
+            <label>
+                <input type="radio" name="fitnessGoal" value="Lose Weight"> Lose Weight
+            </label>
+            <label>
+                <input type="radio" name="fitnessGoal" value="Build Muscle"> Build Muscle
+            </label>
+            <label>
+                <input type="radio" name="fitnessGoal" value="Maintain Fitness"> Maintain Fitness
+            </label>
+        </div>
+        <h2>Current Exercise Level (Choose One):</h2>
+        <div id="ExerciseLevel" class="ExerciseLevel">
+            <label>
+                <input type="radio" name="ExerciseLevel" value="Sedentary"> Lose Weight
+            </label>
+            <label>
+                <input type="radio" name="ExerciseLevel" value="Light Exercise">Light Exercise (1-2 days/week)
+            </label>
+            <label>
+                <input type="radio" name="ExerciseLevel" value="Moderate Exercise"> Moderate Exercise (3-4 days/week)
+            </label>
+            <label>
+                <input type="radio" name="ExerciseLevel" value="Active"> Active (5+ days/week)
+            </label>
+        </div>
         
         <button onclick="nextStep()">Continue</button>
     </div>
+
+
     <div class="step" id="step2">
+        <p class="center-text">Step 2</p>
         <h2>Favorite Types of Exercise (Select All That Apply):</h2>
         <div id="exercise-frequency">
         <label>
@@ -37,19 +79,63 @@
           </label>
           
           <label>
-            <input type="checkbox" name="exercise" value="HIIT"> HIIT
+            <input type="checkbox" name="exercise" value="HIIT">High-Intensity Interval Training 
           </label>
           </div>
+          <h2>Workout Duration Preference (Choose One):</h2>
+          <div id="workout-duration">
+              <label>
+                  <input type="radio" name="duration" value="Short"> Short (15-30 minutes)
+              </label>
+              <label>
+                  <input type="radio" name="duration" value="Moderate"> Moderate (30-45 minutes)
+              </label>
+              <label>
+                  <input type="radio" name="duration" value="Long"> Long (45+ minutes)
+              </label>
+          </div>
+          <h2>Preferred Workout Time:</h2>
+          <div id="workout-time">
+              <label>
+                  <input type="radio" name="time" value="Morning"> Morning
+              </label>
+              <label>
+                  <input type="radio" name="time" value="Afternoon"> Afternoon
+              </label>
+              <label>
+                  <input type="radio" name="time" value="Evening"> Evening
+              </label>
+          </div>
+          
         <button onclick="nextStep()">Next</button>
     </div>
+  
     <div class="step" id="step3">
-        <h2>Weight Goals</h2>
-        <p>What are your weight goals?</p>
-        <input type="text" id="weight-goals" placeholder="Enter your weight goals">
-        <button onclick="submitForm()">Submit</button>
+        <p class="center-text">Step 3</p>
+        <h4>Let's ensure your fitness plan aligns with your health. Provide some additional information about your health and weight goals.</p>
+        <label for="user-age">Age:</label>
+        <input type="number" id="user-age" placeholder="Enter your Age">
+        <label for="user-weight">Weight:</label>
+        <input type="number" id="user-weight" placeholder="Enter your Weight">
+        <label for="user-Height">Height:</label>
+        <input type="number" id="user-Height" placeholder="Enter your Height">
+        <h2>Weight Goal (Choose One):</h2>
+          <div id="weightGoal" >
+              <label>
+                  <input type="radio" name="weightGoal" value="Lose Weight"> Lose Weight
+              </label>
+              <label>
+                  <input type="radio" name="weightGoal" value="Maintain Current Weight"> Maintain Current Weight
+              </label>
+              <label>
+                  <input type="radio" name="weightGoal" value="Gain Muscle"> Gain Muscle
+              </label>
+          </div>
+          <button onclick="submitForm()">Submit</button>
     </div>
+    
 </div>
-<div id="confirmation-message" class="message" style="display: none;"></div>
+<div id="confirmation-message" class="message" style="display: none"></div>
 <script src="script.js"></script>
 
 </body>
